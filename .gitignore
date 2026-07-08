@@ -1,0 +1,41 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+son_env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Generated runs, proofs, and submissions
+runs/*
+!runs/.gitkeep
+sandbox_proof.json
+smoke_proof.json
+evolution_proof.json
+submission.csv
+submission.json
+
+# Model and experiment artifacts
+checkpoints/
+models/
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+wandb/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
