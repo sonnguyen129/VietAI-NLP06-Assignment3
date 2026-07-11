@@ -1,21 +1,16 @@
 # Technical Report — Assignment 03: Self-Improving AI for Financial Question Answering
 
-> **DRAFT** — các ô 【Điền: ...】 cần hoàn thiện trước khi convert sang `report.pdf`.
-> Độ dài khuyến nghị 4-6 trang (không tính phụ lục).
-
 ---
 
 ## 1. Thông tin cá nhân
 
 | Mục | Thông tin |
 |---|---|
-| Họ tên | 【Điền: họ tên đầy đủ】 |
-| MSSV | 【Điền: mã số sinh viên】 |
-| Lớp | 【Điền: lớp / khóa NLP06】 |
-| Kaggle username | 【Điền: username Kaggle】 |
-| Kaggle team name | 【Điền: tên team trên Kaggle (cá nhân)】 |
+| Họ tên | Nguyễn Trường Sơn |
+| Kaggle username | truongson1209 |
+| Kaggle team name | Son Nguyen |
 | Hình thức nộp | Cá nhân (100% khối lượng công việc) |
-| Video thuyết trình | 【Điền: link Google Drive — "Anyone with the link can view"】 |
+| Video thuyết trình | https://drive.google.com/file/d/1Wkg4p0VsM9F1yfeT5RGDlOCynPAdNrqS/view?usp=sharing |
 
 ---
 
@@ -130,6 +125,19 @@ Giai đoạn 3 kế thừa bốn tài sản cụ thể từ Giai đoạn 2:
 2. TF-IDF đánh trọng số: cụm phổ biến ở mọi câu ("là bao", "nhiêu") gần 0, cụm hiếm mang nội dung ("khấu ha", "tỷ suấ") trọng số cao — mỗi câu thành một vector và độ giống giữa hai câu = độ trùng hai vector (cosine).
 3. Xếp hạng cả 2,986 câu train theo độ giống với câu đang hỏi, giữ 8 câu đầu làm sơ tuyển.
 4. Prompt chỉ chứa được 3 shot, nhưng lấy thô top-3 thường được 3 bản sao cùng một khuôn tính — nên duyệt từ trên xuống và bỏ qua câu có **op-signature** (chuỗi tên phép tính của gold program, vd. `subtract(108.50,100), divide(#0,100)` → `subtract,divide`) trùng với shot đã chọn, để 3 shot cùng chủ đề nhưng trình diễn 3 khuôn giải khác nhau (nếu không gom đủ 3 signature khác nhau thì chấp nhận lấy trùng).
+
+Minh họa thuật toán chọn ở bước 4 — duyệt top-8 từ trên xuống, câu nào có signature **chưa gặp** thì lấy, **gặp rồi** thì bỏ qua, đủ 3 thì dừng:
+
+| Hạng | Op-signature | Quyết định |
+|---|---|---|
+| 1 | `subtract,divide` | ✅ lấy — shot 1 (khuôn mới) |
+| 2 | `subtract,divide` | ⏭️ bỏ (trùng shot 1) |
+| 3 | `subtract,divide` | ⏭️ bỏ (trùng) |
+| 4 | `divide` | ✅ lấy — shot 2 (khuôn mới) |
+| 5 | `subtract,divide` | ⏭️ bỏ (trùng) |
+| 6 | `subtract,divide,multiply` | ✅ lấy — shot 3 (khuôn mới) → **dừng** |
+
+Kết quả: 3 shot vẫn **cùng chủ đề** với câu đang hỏi (đều thuộc top-8 giống nhất) nhưng trình diễn **3 công thức giải khác nhau** — mỗi suất bài mẫu dạy được một điều mới, thay vì 3 bản sao của cùng một khuôn.
 
 Lưu ý vai trò của từng loại dữ liệu: phép **so khớp chỉ dùng câu hỏi** (index TF-IDF xây trên 2,986 câu hỏi train — lúc suy luận, câu hỏi là thứ duy nhất ta có; câu test không có đáp án để so). **Gold program chỉ tham gia sau khi đã tìm xong** top-8, ở ba vai: bộ lọc đa dạng (op-signature ở bước 4), nội dung bài mẫu nhét vào prompt, và định vị cửa sổ ngữ cảnh ~500 ký tự quanh các con số của nó (bài mẫu chỉ chứa đúng khúc văn bản liên quan thay vì cả trang báo cáo). Câu train không có gold program bị loại khỏi index từ đầu.
 
@@ -365,12 +373,3 @@ Vote: tolerance `max(1e-4, 0.5%)`, ngưỡng chấp nhận confidence 0.5 / memb
 | `evidence/strategy_diversity.pdf` | `./runs/exp_self/strategy_diversity.pdf` |
 | (bổ sung Phase 3) `runs/phase3/ablation_report.json`, `token_usage.json`, `run.log` | sinh tự động bởi pipeline |
 
-## Phụ lục B — Checklist hoàn thiện gói nộp (tự kiểm trước khi ZIP)
-
-- [ ] Điền toàn bộ ô 【Điền】 trong report này → convert sang `report.pdf`.
-- [ ] `README.md` gói ZIP: team name, họ tên/MSSV/lớp/Kaggle username, submission cuối + LB score 0.77935, best dev 0.7346, commit hash, link video, khai báo dữ liệu.
-- [ ] `integrity_declaration.pdf` — ký tên dưới tuyên bố liêm chính.
-- [ ] `source_code/`: copy `src/`, `predict.py`, `requirements.txt` + viết `run_instructions.md` (lấy từ mục 6.2).
-- [ ] `kaggle/`: `final_submission.csv` (bản 0.77935) + `submission_information.txt` (tên submission, thời điểm, score).
-- [ ] Quay video 5-8 phút, up Drive, set "Anyone with the link can view", dán link vào README + report.
-- [ ] Đặt tên ZIP: `A3_<KaggleTeamName>_<StudentID>.zip`.

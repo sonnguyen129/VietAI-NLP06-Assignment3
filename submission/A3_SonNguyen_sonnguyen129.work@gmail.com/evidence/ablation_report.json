@@ -1,0 +1,62 @@
+{
+  "A1": {
+    "accuracy": 0.64041,
+    "num_correct": 374,
+    "total": 584,
+    "accuracy_by_type": {
+      "addition": 0.4638,
+      "division": 0.7015,
+      "multiplication": 0.65,
+      "subtraction": 0.6752,
+      "table_op": 0.5747
+    },
+    "judge_used": 0,
+    "no_candidates": 35,
+    "ts": "2026-07-09 04:06:49"
+  },
+  "A3": {
+    "accuracy": 0.71062,
+    "num_correct": 415,
+    "total": 584,
+    "accuracy_by_type": {
+      "addition": 0.5507,
+      "division": 0.7612,
+      "multiplication": 0.75,
+      "subtraction": 0.7372,
+      "table_op": 0.6667
+    },
+    "judge_used": 0,
+    "no_candidates": 0,
+    "ts": "2026-07-09 04:06:51"
+  },
+  "A4": {
+    "accuracy": 0.73459,
+    "num_correct": 429,
+    "total": 584,
+    "accuracy_by_type": {
+      "addition": 0.6522,
+      "division": 0.791,
+      "multiplication": 0.8,
+      "subtraction": 0.7299,
+      "table_op": 0.7126
+    },
+    "judge_used": 0,
+    "no_candidates": 0,
+    "ts": "2026-07-09 10:24:25"
+  },
+  "A5": {
+    "accuracy": 0.72945,
+    "num_correct": 426,
+    "total": 584,
+    "accuracy_by_type": {
+      "addition": 0.6522,
+      "division": 0.7687,
+      "multiplication": 0.75,
+      "subtraction": 0.7299,
+      "table_op": 0.7241
+    },
+    "judge_used": 33,
+    "no_candidates": 0,
+    "ts": "2026-07-09 15:52:02"
+  }
+}
