@@ -1,0 +1,200 @@
+[
+  {
+    "ts": "2026-07-08 21:17:30",
+    "subcommand": "rescore",
+    "args": {
+      "command": "rescore",
+      "source": "C:\\Users\\SonNT\\Downloads\\Advanced-NLP06\\assignment03\\runs\\exp_self\\iter_004_eval_dev.json"
+    }
+  },
+  {
+    "ts": "2026-07-08 21:19:19",
+    "subcommand": "rescore",
+    "args": {
+      "command": "rescore",
+      "source": "C:\\Users\\SonNT\\Downloads\\Advanced-NLP06\\assignment03\\runs\\exp_self\\iter_004_eval_dev.json"
+    }
+  },
+  {
+    "ts": "2026-07-08 21:28:59",
+    "subcommand": "generate",
+    "args": {
+      "command": "generate",
+      "split": "validation",
+      "strategies": "s4fix",
+      "groups": "greedy,sampled",
+      "k": "3",
+      "cache": "runs\\phase3\\smoke_cache.jsonl",
+      "limit": "2",
+      "concurrency": "4"
+    }
+  },
+  {
+    "ts": "2026-07-08 21:42:49",
+    "subcommand": "generate",
+    "args": {
+      "command": "generate",
+      "split": "validation",
+      "strategies": "s4fix",
+      "groups": "greedy,sampled",
+      "k": "7",
+      "cache": "runs\\phase3\\dev_cache.jsonl",
+      "limit": "None",
+      "concurrency": "24"
+    }
+  },
+  {
+    "ts": "2026-07-09 03:49:30",
+    "subcommand": "repair",
+    "args": {
+      "command": "repair",
+      "split": "validation",
+      "cache": "runs\\phase3\\dev_cache.jsonl",
+      "concurrency": "12"
+    }
+  },
+  {
+    "ts": "2026-07-09 03:50:20",
+    "subcommand": "score",
+    "args": {
+      "command": "score",
+      "split": "validation",
+      "ablation": "A1",
+      "cache": "C:\\Users\\SonNT\\Downloads\\Advanced-NLP06\\assignment03\\runs\\phase3\\dev_cache.jsonl",
+      "limit": "None"
+    }
+  },
+  {
+    "ts": "2026-07-09 03:50:23",
+    "subcommand": "score",
+    "args": {
+      "command": "score",
+      "split": "validation",
+      "ablation": "A3",
+      "cache": "C:\\Users\\SonNT\\Downloads\\Advanced-NLP06\\assignment03\\runs\\phase3\\dev_cache.jsonl",
+      "limit": "None"
+    }
+  },
+  {
+    "ts": "2026-07-09 04:06:47",
+    "subcommand": "score",
+    "args": {
+      "command": "score",
+      "split": "validation",
+      "ablation": "A1",
+      "cache": "C:\\Users\\SonNT\\Downloads\\Advanced-NLP06\\assignment03\\runs\\phase3\\dev_cache.jsonl",
+      "limit": "None"
+    }
+  },
+  {
+    "ts": "2026-07-09 04:06:50",
+    "subcommand": "score",
+    "args": {
+      "command": "score",
+      "split": "validation",
+      "ablation": "A3",
+      "cache": "C:\\Users\\SonNT\\Downloads\\Advanced-NLP06\\assignment03\\runs\\phase3\\dev_cache.jsonl",
+      "limit": "None"
+    }
+  },
+  {
+    "ts": "2026-07-09 04:07:20",
+    "subcommand": "generate",
+    "args": {
+      "command": "generate",
+      "split": "validation",
+      "strategies": "retr",
+      "groups": "greedy,sampled",
+      "k": "7",
+      "cache": "runs\\phase3\\dev_cache.jsonl",
+      "limit": "None",
+      "concurrency": "24"
+    }
+  },
+  {
+    "ts": "2026-07-09 07:03:11",
+    "subcommand": "repair",
+    "args": {
+      "command": "repair",
+      "split": "validation",
+      "cache": "runs\\phase3\\dev_cache.jsonl",
+      "concurrency": "12"
+    }
+  },
+  {
+    "ts": "2026-07-09 10:24:22",
+    "subcommand": "score",
+    "args": {
+      "command": "score",
+      "split": "validation",
+      "ablation": "A4",
+      "cache": "C:\\Users\\SonNT\\Downloads\\Advanced-NLP06\\assignment03\\runs\\phase3\\dev_cache.jsonl",
+      "limit": "None"
+    }
+  },
+  {
+    "ts": "2026-07-09 10:26:54",
+    "subcommand": "generate",
+    "args": {
+      "command": "generate",
+      "split": "test",
+      "strategies": "s4fix,retr",
+      "groups": "greedy,sampled",
+      "k": "7",
+      "cache": "runs\\phase3\\test_cache.jsonl",
+      "limit": "None",
+      "concurrency": "24"
+    }
+  },
+  {
+    "ts": "2026-07-09 14:52:54",
+    "subcommand": "repair",
+    "args": {
+      "command": "repair",
+      "split": "test",
+      "cache": "runs\\phase3\\test_cache.jsonl",
+      "concurrency": "12"
+    }
+  },
+  {
+    "ts": "2026-07-09 15:10:58",
+    "subcommand": "submit",
+    "args": {
+      "command": "submit",
+      "cache": "runs\\phase3\\test_cache.jsonl",
+      "ablation": "A4",
+      "out": "runs\\phase3\\test_predictions.json"
+    }
+  },
+  {
+    "ts": "2026-07-09 15:11:01",
+    "subcommand": "check",
+    "args": {
+      "command": "check",
+      "submission": "submission.csv",
+      "fix": "False"
+    }
+  },
+  {
+    "ts": "2026-07-09 15:43:46",
+    "subcommand": "judge",
+    "args": {
+      "command": "judge",
+      "split": "validation",
+      "cache": "runs\\phase3\\dev_cache.jsonl",
+      "ablation": "A4",
+      "concurrency": "8"
+    }
+  },
+  {
+    "ts": "2026-07-09 15:52:00",
+    "subcommand": "score",
+    "args": {
+      "command": "score",
+      "split": "validation",
+      "ablation": "A5",
+      "cache": "C:\\Users\\SonNT\\Downloads\\Advanced-NLP06\\assignment03\\runs\\phase3\\dev_cache.jsonl",
+      "limit": "None"
+    }
+  }
+]

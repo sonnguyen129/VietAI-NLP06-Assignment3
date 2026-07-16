@@ -1,0 +1,26 @@
+{
+  "strategy_id": "e47cce82-9e46-4de4-ab46-7ad2049ae316",
+  "accuracy_by_type": {
+    "trích_xuat": 0.3,
+    "logic_cong_thuc": 0.2,
+    "cu_phap_long_ham": 0.1,
+    "don_vi_tich_le": 0.4
+  },
+  "top_failures": [
+    {
+      "pattern": "Trích xuất không đầy đủ: thiếu giá trị hoặc cột dữ liệu cần thiết."
+    },
+    {
+      "pattern": "Sai logic công thức: dùng sai phép toán hoặc đảo ngược thứ tự tính."
+    },
+    {
+      "pattern": "Vi phạm cú pháp: lặp hàm trích xuất mà không thực hiện đúng ngữ cảnh."
+    },
+    {
+      "pattern": "Lỗi đơn vị/tỷ lệ: không xử lý đúng hệ số hoặc hướng tính phần trăm."
+    }
+  ],
+  "hypothesis": "Thêm quy tắc bắt buộc xác nhận giá trị trích xuất bằng cách so sánh với bảng trước khi viết code; thêm kiểm tra logic công thức trong từng bước giải thích để phát hiện sai lệch sớm.",
+  "summary": "Phân tích cho thấy model gặp lỗi nghiêm trọng ở cả trích xuất dữ liệu, áp dụng công thức và xử lý đơn vị. Nguyên nhân gốc rễ là prompt thiếu ràng buộc chặt chẽ về định dạng đầu ra và cơ chế kiểm tra chéo giữa bước suy luận và chương trình. Việc bổ sung quy tắc xác nhận giá trị và kiểm tra logic ngay trong quá trình giải sẽ giúp giảm thiểu các sai lệch hệ thống. Các mẫu lỗi lặp lại cho thấy cần cải thiện khả năng chú ý chi tiết và tuân thủ cú pháp của model.",
+  "raw_response": "The user wants me to analyze the performance of a prompt strategy for a Vietnamese financial math problem-solving model. I need to:\n\n1. Group errors into failure patterns (not just operation types)\n2. Analyze root causes\n3. Propose testable hypotheses for improvement\n\nConstraints:\n- Total length ≤ 500 characters/words (Vietnamese)\n- No repetition, no fluff\n- Hypothesis: max 2 sentences\n- Summary: max 1 paragraph (3-4 sentences)\n\nLet me analyze the errors first:\n\nLỗi 1: table_max - Model repeatedly outputs \"table_max(\" instead of extracting value correctly. Shows extraction issue and function misuse pattern.\n\nLỗi 2: subtraction/division - Model extracts year 2010 value but misses year 2011 value. Then uses wrong formula (should divide by #0 which is likely missing data). Shows extraction error and formula logic error.\n\nLỗi 3: multiplication/division - Model uses subtract(555.3, 536.7) when it should multiply(18.9, 1000000). Shows wrong formula application - using revenue difference instead of production increase calculation.\n\nLỗi 4: table_max/min/subtract - Model finds max as 1603 but output shows only partial. Shows incomplete extraction and aggregation error.\n\nLỗi 5: subtraction/division - Wrong order of subtraction (17.76 - 16.72 instead of 16.72 - 17.76), showing directionality error in percentage change calculation.\n\nCommon patterns:\n1. Extraction sai số (wrong values extracted or incomplete)\n2. Logic công thức sai (wrong formula structure)\n3. Cú pháp lồng hàm sai (repeated table_max calls without proper execution)\n4. Lỗi đơn vị/tỷ lệ (percentage calculation direction)\n\n\n</think>\n\n**Mẫu lỗi:**\n\n1. **Trích xuất không đầy đủ**: Lỗi 2, 4 thiếu giá trị năm cụ thể hoặc bỏ sót cột dữ liệu cần thiết.\n2. **Sai logic công thức**: Lỗi 3 dùng phép trừ thay vì nhân, Lỗi 5 đảo ngược thứ tự tính phần trăm.\n3. **Vi phạm cú pháp**: Lỗi 1 lặp lại `table_max()` mà không thực hiện trích xuất đúng ngữ cảnh.\n4. **Lỗi đơn vị/tỷ lệ**: Không xử lý đúng hệ số tỷ hoặc đơn vị tiền tệ trong kết quả cuối cùng.\n\n**Nguyên nhân sâu xa:** Prompt yêu cầu trích xuất nhưng thiếu ràng buộc về định dạng đầu ra và kiểm tra chéo giá trị giữa bước CoT và chương trình.\n\n**Giả thuyết cải thiện:** Thêm quy tắc bắt buộc xác nhận giá trị trích xuất bằng cách so sánh với bảng trước khi viết code; thêm kiểm tra logic công thức trong từng bước giải thích để phát hiện sai lệch sớm."
+}

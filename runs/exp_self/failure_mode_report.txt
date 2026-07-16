@@ -1,0 +1,20 @@
+============================================================
+EvoAgent Failure Mode Report
+============================================================
+
+Total iterations: 5
+Best strategy: iteration 4, dev accuracy 0.579
+
+Per-type accuracy (from iter eval train/dev files):
+  addition: dev min=0.179, max=0.464, final=0.393, trend=↑; train min=0.115, max=0.346, final=0.346, trend=↑
+  division: dev min=0.327, max=0.764, final=0.764, trend=↑; train min=0.244, max=0.644, final=0.578, trend=↑
+  multiplication: dev min=0.500, max=0.700, final=0.700, trend=↑; train min=0.111, max=0.222, final=0.222, trend=↑
+  subtraction: dev min=0.318, max=0.617, final=0.617, trend=↑; train min=0.436, max=0.798, final=0.798, trend=↑
+  table_op: dev min=0.275, max=0.450, final=0.325, trend=↓; train min=0.231, max=0.462, final=0.269, trend=↓
+
+Hypotheses by iteration:
+  Iter 0: Thêm chỉ dẫn trích xuất biến cụ thể từ ngữ cảnh/bảng vào đầu prompt sẽ giảm đáng kể lỗi chọn số. Bật chế độ CoT bắt buộc với yêu cầu giải thích từng bước logic trước khi tạo hàm toán sẽ cải thiện độ c
+  Iter 1: Thêm quy tắc bắt buộc xác nhận giá trị trích xuất bằng cách so sánh với bảng trước khi viết code; thêm kiểm tra logic công thức trong từng bước giải thích để phát hiện sai lệch sớm.
+  Iter 2: Bổ sung quy tắc 'Xác định biến đầu vào bằng công thức trước khi viết hàm' để đảm bảo thứ tự tính toán chính xác.
+  Iter 3: Chuyển đổi CoT sang 'none' kết hợp với lệnh giới hạn đầu ra dưới 800 token sẽ làm tăng tỷ lệ hoàn thành chương trình. Cập nhật template yêu cầu trích xuất biến theo cấu trúc JSON hoặc mảng số cụ thể t
+  Iter 4: (No reflection generated - last iteration optimization)

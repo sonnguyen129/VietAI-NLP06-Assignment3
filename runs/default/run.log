@@ -1,0 +1,29 @@
+2026-07-08 05:05:34 [INFO] root: Logging to runs\default\run.log
+2026-07-08 05:05:34 [INFO] src.main: EvoAgent starting. Args: {'T': 5, 'resume': None, 'dataset': 'local_financial_qa', 'train_size': 100, 'dev_size': None, 'seed': 42, 'model': 'QuantTrio/Qwen3.5-4B-AWQ', 'max_new_tokens': 4096, 'max_model_len': 16384, 'temperature': 0.0, 'no_4bit': False, 'gpu_memory_utilization': 0.9, 'afo_mode': 'best', 'afo_prob_best': 0.4, 'afo_prob_original': 0.3, 'afo_prob_latest': 0.3, 'progressive_reflections': True, 'use_curriculum': False, 'output_dir': './runs/default', 'early_stop': 1.0, 'log_level': 'INFO', 'skip_analysis': False, 'smoke_test': True}
+2026-07-08 05:05:35 [INFO] src.data: Loaded 2986 examples for train split.
+2026-07-08 05:05:35 [INFO] src.data: Loaded 584 examples for validation split.
+2026-07-08 05:05:36 [INFO] src.data: Loaded 494 examples for test split.
+2026-07-08 05:05:36 [INFO] src.data: Splits ready: train_subset=100, dev=584.
+2026-07-08 05:05:36 [INFO] src.main: Initialising QwenInference with model 'QuantTrio/Qwen3.5-4B-AWQ'…
+2026-07-08 05:05:37 [INFO] src.model: Connecting to vLLM server: base_url=https://api.aws.us-east-1.cerebrium.ai/v4/p-b416fd1e/assignment03/v1 model=QuantTrio/Qwen3.5-4B-AWQ
+2026-07-08 05:05:38 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/QuantTrio/Qwen3.5-4B-AWQ/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 05:05:38 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/QuantTrio/Qwen3.5-4B-AWQ/32c292e3a73afe1138518180b1b6d2868c980ee2/config.json "HTTP/1.1 200 OK"
+2026-07-08 05:05:38 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/QuantTrio/Qwen3.5-4B-AWQ/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 05:05:38 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/QuantTrio/Qwen3.5-4B-AWQ/32c292e3a73afe1138518180b1b6d2868c980ee2/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-08 05:05:39 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/QuantTrio/Qwen3.5-4B-AWQ/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 05:05:39 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/QuantTrio/Qwen3.5-4B-AWQ/32c292e3a73afe1138518180b1b6d2868c980ee2/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-08 05:05:39 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/QuantTrio/Qwen3.5-4B-AWQ/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-08 05:05:39 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/QuantTrio/Qwen3.5-4B-AWQ/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-08 05:05:40 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/QuantTrio/Qwen3.5-4B-AWQ "HTTP/1.1 200 OK"
+2026-07-08 05:05:42 [INFO] httpx: HTTP Request: GET https://api.aws.us-east-1.cerebrium.ai/v4/p-b416fd1e/assignment03/v1/models "HTTP/1.1 200 OK"
+2026-07-08 05:05:42 [INFO] src.model: Server reachable. Served models: ['QuantTrio/Qwen3.5-4B-AWQ']
+2026-07-08 05:05:42 [INFO] src.model: Inference client ready.
+2026-07-08 05:05:42 [INFO] src.main: Running pre-flight smoke test on seed strategy...
+2026-07-08 05:05:42 [INFO] src.executor: Evaluating strategy ab9f3821 on smoke_test split.
+2026-07-08 05:05:44 [INFO] httpx: HTTP Request: POST https://api.aws.us-east-1.cerebrium.ai/v4/p-b416fd1e/assignment03/v1/completions "HTTP/1.1 200 OK"
+2026-07-08 05:05:45 [INFO] httpx: HTTP Request: POST https://api.aws.us-east-1.cerebrium.ai/v4/p-b416fd1e/assignment03/v1/completions "HTTP/1.1 200 OK"
+2026-07-08 05:05:45 [INFO] httpx: HTTP Request: POST https://api.aws.us-east-1.cerebrium.ai/v4/p-b416fd1e/assignment03/v1/completions "HTTP/1.1 200 OK"
+2026-07-08 05:05:45 [INFO] httpx: HTTP Request: POST https://api.aws.us-east-1.cerebrium.ai/v4/p-b416fd1e/assignment03/v1/completions "HTTP/1.1 200 OK"
+2026-07-08 05:05:45 [INFO] httpx: HTTP Request: POST https://api.aws.us-east-1.cerebrium.ai/v4/p-b416fd1e/assignment03/v1/completions "HTTP/1.1 200 OK"
+2026-07-08 05:05:45 [INFO] src.harness: Smoke test passed: 5/5 programs extracted, avg output tokens 27.0 (limit 256).
+2026-07-08 05:05:45 [INFO] src.main: Smoke test PASSED!

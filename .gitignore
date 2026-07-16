@@ -16,14 +16,9 @@ __pycache__/
 *.pem
 *.key
 
-# Generated runs, proofs, and submissions
-runs/*
-!runs/.gitkeep
-sandbox_proof.json
-smoke_proof.json
-evolution_proof.json
-submission.csv
-submission.json
+# Large generation caches — evidence files are committed, raw caches are not
+runs/phase3/dev_cache.jsonl
+runs/phase3/test_cache.jsonl
 
 # Model and experiment artifacts
 checkpoints/

@@ -1,0 +1,17 @@
+{
+  "source": "C:\\Users\\SonNT\\Downloads\\Advanced-NLP06\\assignment03\\runs\\exp_self\\iter_004_eval_dev.json",
+  "total": 240,
+  "old_accuracy": 0.57917,
+  "new_accuracy": 0.57917,
+  "lift_pp": 0.0,
+  "extraction_tags": {
+    "json_after_think": 178,
+    "runaway": 51,
+    "json_truncated": 9,
+    "none": 2
+  },
+  "rescued": 0,
+  "lost": 0,
+  "lost_details": [],
+  "note": "Rescore is offline-only: runaway/empty outputs stay wrong here — the repair pass (GPU) handles them later."
+}
