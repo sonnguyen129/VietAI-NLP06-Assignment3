@@ -1,0 +1,14 @@
+{
+  "qwen_generate": {
+    "input_tokens": 55941840,
+    "output_tokens": 17239308
+  },
+  "qwen_repair": {
+    "input_tokens": 8792622,
+    "output_tokens": 170416
+  },
+  "judge_r1": {
+    "input_tokens": 118240,
+    "output_tokens": 41844
+  }
+}
