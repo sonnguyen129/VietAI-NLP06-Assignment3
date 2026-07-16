@@ -407,4 +407,4 @@ Ghép tất cả lại, một câu hỏi trong `dev.json` đi qua hệ thống n
 | Chạy pipeline Kaggle / tái tạo submission | [HUONG_DAN_HOAN_TAT_GIAI_DOAN_2.md](HUONG_DAN_HOAN_TAT_GIAI_DOAN_2.md) |
 | Luật Kaggle, format nộp, gói nộp cuối | [docs/PHASE3_KAGGLE.md](../docs/PHASE3_KAGGLE.md) · [docs/SUBMISSION_FORMAT.md](../docs/SUBMISSION_FORMAT.md) · [docs/THINKFLIC_SUBMISSION.md](../docs/THINKFLIC_SUBMISSION.md) |
 | Đọc code theo thứ tự dễ hiểu nhất | `strategy.py` → `model.py` → `evaluator.py` → `sandbox.py` → `executor.py` → `self_reflector.py` → `self_proposer.py` → `harness.py` → (GĐ2) `extraction_v2.py` → `voting.py` → `retrieval.py` → `pipeline_v2.py` |
-| Xem kết quả & phân tích đã chạy | `runs/exp_self/history.jsonl` (đường cong tiến hóa GĐ1) · `runs/phase3/ablation_report.json` (điểm từng ablation GĐ2) · [report/technical_report_draft.md](../report/technical_report_draft.md) |
+| Xem kết quả & phân tích đã chạy | `runs/exp_self/history.jsonl` (đường cong tiến hóa GĐ1) · `runs/phase3/ablation_report.json` (điểm từng ablation GĐ2) · [report/technical_report.md](../report/technical_report.md) |

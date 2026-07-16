@@ -17,8 +17,10 @@ __pycache__/
 *.key
 
 # Large generation caches — evidence files are committed, raw caches are not
+# (backed up locally in Documents/evoagent_backup)
 runs/phase3/dev_cache.jsonl
 runs/phase3/test_cache.jsonl
+runs/phase3/judge_cache.jsonl
 
 # Model and experiment artifacts
 checkpoints/
